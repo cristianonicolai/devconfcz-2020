@@ -25,7 +25,7 @@ Make sure that you have everything set and installed before continue:
 - VsCode 1.41.1
 - Quarkus 1.1.1
 - Kogito 0.6.1
-- Kogito VsCode extesion 0.2.7
+- Kogito VsCode extension 0.2.7
 - Red Hat Java VSCode extension (latest)
 - Maven 3.6.0
 - Git
@@ -200,8 +200,7 @@ mvn clean verify
 - Process Name: _Travels_
 - Id: _travels_
 - Package: `org.acme.travel`
-- Process data:
-    Add the following process variables:
+- Process data (add the following process variables):
     - Name: _flight_ Data type (custom): `org.acme.travel.Flight`
     - Name: _trip_ Data type (custom): `org.acme.travel.Trip`
     - Name: _hotel_ Data type (custom): `org.acme.travel.Hotel`
@@ -218,16 +217,16 @@ mvn clean verify
         - Rule Language: _DRL_
         - Rule Flow Group (new): _visas_
     - Data Assignments
-          - Input:
-              - Add an input named _trip_ of type (custom) `org.acme.travel.Trip` and source _trip_.
-              - Add an input named _traveller_ of type (custom) `org.acme.travel.Traveller` and source _traveller_.
-        - Output: Add an output named _trip_ of type `org.acme.travel.Trip` and target _trip_.
+      - Input:
+        - Add an input named _trip_ of type (custom) `org.acme.travel.Trip` and source _trip_.
+        - Add an input named _traveller_ of type (custom) `org.acme.travel.Traveller` and source _traveller_.
+      - Output: Add an output named _trip_ of type `org.acme.travel.Trip` and target _trip_.
 
 **Important!** Save your work: ctrl+S
 
 - From _Visa Check_, add an exclusive gateway
-- From the exclusive gateway, add a user task named _Visa Application_ with the following attributes (Implementation/Execution):
-    - Task Name: _VisaApplication_
+- From the exclusive gateway, add a user task named _Visa Application_ with the following attributes
+    - Implementation/Execution, Task Name: _VisaApplication_
 - Select the connecting arrow between the exclusive gateway and the _Visa Application_ task and set the following attribute:
     - Implementation/Execution,  Expression radio button:
     ```java
@@ -241,7 +240,7 @@ mvn clean verify
     ```
 - From the newly created exclusive gateway, add new parallel gateway.
 - From the parallel gateway, add new reusable sub-process for _Book Hotel_ process with the following attributes:
-  - Implementation/Execution -> Called Element (new): _hotelBooking_
+  - Implementation/Execution, Called Element (new): _hotelBooking_
   - Data Assignments
     - Input: Add an input named _trip_ of type (custom) `org.acme.travel.Trip` and source _trip_.
     - Output: Add an output named _hotel_ of type `org.acme.travel.Hotel` and source _hotel_.
@@ -249,7 +248,7 @@ mvn clean verify
 **Important!** Save your work: ctrl+S
 
 - From the parallel gateway add new reusable sub-process for _Book Flight_ process with the following attributes:
-  - Implementation/Execution -> Called Element: _flightBooking_
+  - Implementation/Execution, Called Element (new): _flightBooking_
   - Data Assignments
     - Input: Add an input named _trip_ of type (custom) `org.acme.travel.Trip` and source _trip_.
     - Output: Add an output named _flight_ of type (custom) `org.acme.travel.Flight` and source _flight_.
@@ -317,7 +316,7 @@ EOF
 
 Make note of the returned `id` field, since your will need it from now on.
 
-4. Get open tasks for current process, should return `ConfirmTravel` (replace `{uuid}` with the `id` field returned in the last step):
+4. Get open tasks for current process, should return `ConfirmTravel` (replace `{uuid}` with the `id` field returned in the previous step):
 
 ```bash
 curl -X GET http://localhost:8080/travels/{uuid}/tasks
@@ -327,7 +326,7 @@ Make note of the returned `id` field, since your will need it from now on in the
 
 5. Completes confirms travel task - meaning confirms (and completes) the travel request:
 
-Replace `{uuid}` with the `id` returned from the step #3 and `{task-uuid}` with the id from the last step (#4):
+Replace `{uuid}` with the `id` returned from the step #3 and `{task-uuid}` with the id from the previous step (#4):
 
 ```bash
 curl -H "Content-Type: application/json" -H "Accept: application/json" -X POST http://localhost:8080/travels/{uuid}/ConfirmTravel/{task-uuid} -d '{}'
@@ -376,7 +375,7 @@ EOF
 
 Make note of the returned `id` field, since your will need it from now on.
 
-8. Get open tasks for current process, should return `VisaApplication` (replace `{uuid}` with the `id` field returned in the last step):
+8. Get open tasks for current process, should return `VisaApplication` (replace `{uuid}` with the `id` field returned in the previous step):
 
 ```sh
 curl -X GET http://localhost:8080/travels/{uuid}/tasks
@@ -384,7 +383,7 @@ curl -X GET http://localhost:8080/travels/{uuid}/tasks
 
 Make note of the returned `id` field, since your will need it from now on in the `task-uuid` placeholders.
 
-9. Completes Visa Application request. Replace `{uuid}` with the `id` returned from the step #7 and `{task-uuid}` with the id from the last step (#8):
+9. Completes Visa Application request. Replace `{uuid}` with the `id` returned from the step #7 and `{task-uuid}` with the id from the previous step (#8):
 
 ```sh
 curl -H "Content-Type: application/json" -H "Accept: application/json" -X POST http://localhost:8080/travels/{uuid}/VisaApplication/{task-uuid} -d '{}'
