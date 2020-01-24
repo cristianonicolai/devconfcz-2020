@@ -14,7 +14,7 @@ Table of Contents
 * [9) Create the business logic for the Hotel Booking](#9-create-the-business-logic-for-the-hotel-booking)
 * [10) Create the business logic for the Flight Booking](#10-create-the-business-logic-for-the-flight-booking)
 * [11) Create the business logic for the Travel Request](#11-create-the-business-logic-for-the-travel-request)
-* [12) Verify the Services Endpoints](#12-verify-the-services-endpoints)
+* [12) Verify the REST Endpoints](#12-verify-the-rest-endpoints)
 * [13) Verify the User Interface](#13-verify-the-user-interface)
 
 ## 1) Pre requisites
@@ -220,7 +220,8 @@ mvn clean verify
       - Input:
         - Add an input named _trip_ of type (custom) `org.acme.travel.Trip` and source _trip_.
         - Add an input named _traveller_ of type (custom) `org.acme.travel.Traveller` and source _traveller_.
-      - Output: Add an output named _trip_ of type `org.acme.travel.Trip` and target _trip_.
+      - Output:
+        - Add an output named _trip_ of type `org.acme.travel.Trip` and target _trip_.
 
 **Important!** Save your work: ctrl+S
 
@@ -271,7 +272,7 @@ mvn clean verify
 
 Your test will fail because the assertions are expecting fixed values that are being returned from your services. Make sure to fix your services and try again.
 
-## 12) Verify the Services Endpoints
+## 12) Verify the REST Endpoints
 
 1. Run the following command to execute your Kogito application:
 
@@ -285,7 +286,7 @@ mvn clean quarkus:dev
 curl -X GET http://localhost:8080/travels
 ```
 
-Should return an empty array since we don’t have travels yet.
+Should return an empty array since you don’t have any travels yet.
 
 3. Post new Travel that **does not** require visa
 
