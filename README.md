@@ -141,6 +141,8 @@ mvn clean verify
 
 ## 9) Create the business logic for the Hotel Booking
 
+![alt text](docs/hotelbooking.png)
+
 1. On `src/main/resources/org/acme/travel`, create new BPMN file for the Hotel booking sub-process. Using the BPMN editor, set the following process attributes (properties panel on right side):
 
 - Process Name: _Hotel Booking_
@@ -168,6 +170,8 @@ mvn clean verify
 
 ## 10) Create the business logic for the Flight Booking
 
+![alt text](docs/flightbooking.png)
+
 1. On `src/main/resources/org/acme/travel`, create new BPMN file for the Flight booking sub-process. Using the BPMN editor, set the following process attributes (properties panel on right side):
 
 - Process Name: _Flight Booking_
@@ -194,6 +198,8 @@ mvn clean verify
 **Important!** Save your work: ctrl+S
 
 ## 11) Create the business logic for the Travel Request
+
+![alt text](docs/travels.png)
 
 1. On `src/main/resources/org/acme/travel`, create new BPMN file for the Travels process. Using the BPMN editor, set the following process attributes (properties panel on right side):
 
