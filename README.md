@@ -1,5 +1,22 @@
 # INSTRUCTIONS FOR THE KOGITO WORKSHOP DEVCONF.CZ 2020
 
+Table of Contents
+=================
+
+* [1) Pre requisites](#1-pre-requisites)
+* [2) Generate the project skeleton](#2-generate-the-project-skeleton)
+* [3) Verify if everything is fine](#3-verify-if-everything-is-fine)
+* [4) Install the Kogito Extension in VSCode](#4-install-the-kogito-extension-in-vscode)
+* [5) Import the generated project into VSCode](#5-import-the-generated-project-into-vscode)
+* [6) Import the required resources to the project](#6-import-the-required-resources-to-the-project)
+* [7) Run the test rules](#7-run-the-test-rules)
+* [8) Create service classes](#8-create-service-classes)
+* [9) Create the business logic for the Hotel Booking](#9-create-the-business-logic-for-the-hotel-booking)
+* [10) Create the business logic for the Flight Booking](#10-create-the-business-logic-for-the-flight-booking)
+* [11) Create the business logic for the Travel Request](#11-create-the-business-logic-for-the-travel-request)
+* [12) Verify the Services Endpoints](#12-verify-the-services-endpoints)
+* [13) Verify the User Interface](#13-verify-the-user-interface)
+
 ## 1) Pre requisites
 
 Make sure that you have everything set and installed before continue:
@@ -10,7 +27,6 @@ Make sure that you have everything set and installed before continue:
 - Kogito 0.6.1
 - Kogito VsCode extesion 0.2.7
 - Red Hat Java VSCode extension (latest)
-- GraalVM 19.2.0.1
 - Maven 3.6.0
 - Git
 
@@ -139,11 +155,11 @@ mvn clean verify
 
 2. Model Hotel Booking process
 
- - Add a start node, a service task for executing the HotelBookingService bean and an end node.
+ - Add a start node, a service task for executing the `HotelBookingService` bean and an end node.
  - Select the new service task node modify the following properties (Implementation/Execution):
    - Select Implementation _Java_
-   - Interface, the fully complete name of the HotelBookingService class: `org.acme.travel.service.HotelBookingService`
-   - Operation, the name of the method that you created in the HotelBookingService class service.
+   - Interface, the fully complete name of the `HotelBookingService` class: `org.acme.travel.service.HotelBookingService`
+   - Operation, the name of the method that you created in the `HotelBookingService` class service.
    - Assignments:
         - Input: Add an input named _Parameter_ of type (custom) `org.acme.travel.Trip` and source _trip_.
         - Output: Add an output named _Result_ of type (custom) `org.acme.travel.Hotel` and source _hotel_.
@@ -166,11 +182,11 @@ mvn clean verify
 
 2. Model Flight Booking process
 
- - Add a start node, a service task for executing the FlightBookingService bean and an end node.
+ - Add a start node, a service task for executing the `FlightBookingService` bean and an end node.
  - Select the new service task node modify the following properties (Implementation/Execution):
    - Select Implementation _Java_
-   - Interface, the fully complete name of the FlightBookingService class: `org.acme.travel.service.FlightBookingService`
-   - Operation, the name of the method that you created in the FlightBookingService class service.
+   - Interface, the fully complete name of the `FlightBookingService` class: `org.acme.travel.service.FlightBookingService`
+   - Operation, the name of the method that you created in the `FlightBookingService` class service.
    - Assignments:
         - Input: Add an input named _Parameter_ of type `org.acme.travel.Trip` and source _trip_.
         - Output: Add an output named _Result_ of type `org.acme.travel.Flight` and source _flight_.
