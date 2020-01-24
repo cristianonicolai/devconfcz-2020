@@ -26,9 +26,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @QuarkusTest
 public class TravelTest {
 
-    @Inject
-    @Named("travels")
-    Process<? extends Model> travelsProcess;
+//    @Inject
+//    @Named("travels")
+//    Process<? extends Model> travelsProcess;
 
     @Test
     public void testTravelNoVisaRequired() {
