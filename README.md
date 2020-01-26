@@ -16,24 +16,28 @@ Table of Contents
 * [11) Create the business logic for the Travel Request](#11-create-the-business-logic-for-the-travel-request)
 * [12) Verify the REST Endpoints](#12-verify-the-rest-endpoints)
 * [13) Verify the User Interface](#13-verify-the-user-interface)
+* [Resources](#resources)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## 1) Pre requisites
 
 Make sure that you have everything set and installed before continue:
 
-- OpenJDK 11
-- VsCode 1.41.1
-- Quarkus 1.1.1
-- Kogito 0.6.1
-- Kogito VsCode extension 0.2.7
-- Red Hat Java VSCode extension (latest)
-- Maven 3.6.0
-- Git
+- [OpenJDK 11](https://computingforgeeks.com/how-to-install-java-11-openjdk-11-on-rhel-8)
+- [VSCode 1.41.1](https://code.visualstudio.com/docs/setup/linux)
+- [Kogito VSCode extension (latest)](https://github.com/kiegroup/kogito-tooling/releases)
+- [Red Hat Java VSCode extension (latest)](https://marketplace.visualstudio.com/items?itemName=redhat.java)
+- [Maven 3.6.0+](https://maven.apache.org/install.html)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## 2) Generate the project skeleton
 
 ```bash
-mvn io.quarkus:quarkus-maven-plugin:1.1.1.Final:create -DprojectGroupId=org.acme.travel -DprojectArtifactId=kogito-travel-agency -Dextensions="kogito,openapi"
+mvn io.quarkus:quarkus-maven-plugin:1.1.1.Final:create \
+    -DprojectGroupId=org.acme.travel \
+    -DprojectArtifactId=kogito-travel-agency \
+    -Dextensions="kogito,openapi"
 ```
 
 This command will generate the following project structure:
@@ -421,3 +425,24 @@ You’ll receive an empty response, the process has finished and there’s no re
 Explore Swagger UI on http://localhost:8080/swagger-ui/
 
 Plan new travel requests using the Travel Agency UI available on http://localhost:8080/
+
+## Solution
+
+Just clone the branch `solved`:
+
+```bash
+git clone -b solved --single-branch git@github.com:cristianonicolai/devconfcz-2020.git devconfcz-2020-solved
+```
+
+Run the application:
+
+```bash
+cd devconfcz-2020-solved
+mvn clean verify quarkus:dev
+```
+
+## Resources
+
+- [Kogito Wiki](https://github.com/kiegroup/kogito-runtimes/wiki)
+- [Kogito Workshop DevConf.CZ 2020 Presentation](https://docs.google.com/presentation/d/1qPpeUd3lsLNvQJHLNAqBEcmN1mirtHVQM1pU7SEgTF0/)
+- [Workshop Feedback - we want to hear back from you](https://docs.google.com/forms/d/e/1FAIpQLSd0_VScAhwPgcM3qm1CDKUvPxcGrCT0bP-BWEMLSvbVaCRUGA/viewform?usp=sf_link)
