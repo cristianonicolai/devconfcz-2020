@@ -2,14 +2,17 @@ package org.acme.travel;
 
 import java.util.Date;
 
+/**
+ * Flight
+ */
 public class Flight {
 
     private String flightNumber;
-    private String seat;
-    private String gate;
-    private Date departure;
+	private String seat;
+	private String gate;
+	private Date departure;
     private Date arrival;
-
+    
     public Flight() {
         super();
     }
@@ -67,4 +70,5 @@ public class Flight {
         return "Flight [arrival=" + arrival + ", departure=" + departure + ", flightNumber=" + flightNumber + ", gate="
                 + gate + ", seat=" + seat + "]";
     }
+    
 }

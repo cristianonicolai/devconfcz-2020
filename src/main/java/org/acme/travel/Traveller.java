@@ -3,23 +3,23 @@ package org.acme.travel;
 public class Traveller {
 
     private String firstName;
-    private String lastName;
-    private String email;
-    private String nationality;
+	private String lastName;
+	private String email;
+	private String nationality;
     private Address address;
-
+    
     public Traveller() {
         super();
     }
 
     public Traveller(String firstName, String lastName, String email, String nationality, Address address) {
-        super();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.nationality = nationality;
-        this.address = address;
-    }
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.nationality = nationality;
+		this.address = address;
+	}
 
     public String getFirstName() {
         return firstName;
@@ -66,4 +66,7 @@ public class Traveller {
         return "Traveller [address=" + address + ", email=" + email + ", firstName=" + firstName + ", lastName="
                 + lastName + ", nationality=" + nationality + "]";
     }
+
+    
+
 }

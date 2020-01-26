@@ -1,5 +1,8 @@
 package org.acme.travel;
 
+/**
+ * Hotel
+ */
 public class Hotel {
 
     private String name;
@@ -65,4 +68,7 @@ public class Hotel {
         return "Hotel [address=" + address + ", bookingNumber=" + bookingNumber + ", name=" + name + ", phone=" + phone
                 + ", room=" + room + "]";
     }
+
+
+
 }

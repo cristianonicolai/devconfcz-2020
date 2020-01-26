@@ -1,12 +1,15 @@
 package org.acme.travel;
 
+/**
+ * Address
+ */
 public class Address {
 
     private String street;
-    private String city;
-    private String zipCode;
+	private String city;
+	private String zipCode;
     private String country;
-
+    
     public Address() {
         super();
     }
@@ -54,4 +57,6 @@ public class Address {
     public String toString() {
         return "Address [city=" + city + ", country=" + country + ", street=" + street + ", zipCode=" + zipCode + "]";
     }
+
+    
 }
