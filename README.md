@@ -16,6 +16,7 @@ Table of Contents
 * [11) Create the business logic for the Travel Request](#11-create-the-business-logic-for-the-travel-request)
 * [12) Verify the REST Endpoints](#12-verify-the-rest-endpoints)
 * [13) Verify the User Interface](#13-verify-the-user-interface)
+* [Solution](#solution)
 * [Resources](#resources)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
