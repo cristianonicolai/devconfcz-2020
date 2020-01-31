@@ -25,7 +25,7 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 Make sure that you have everything set and installed before continue:
 
-- [OpenJDK 11](https://computingforgeeks.com/how-to-install-java-11-openjdk-11-on-rhel-8)
+- [OpenJDK 8+](https://computingforgeeks.com/how-to-install-java-11-openjdk-11-on-rhel-8)
 - [VSCode 1.41.1](https://code.visualstudio.com/docs/setup/linux)
 - [Kogito VSCode extension (latest)](https://github.com/kiegroup/kogito-tooling/releases)
 - [Red Hat Java VSCode extension (latest)](https://marketplace.visualstudio.com/items?itemName=redhat.java)
