@@ -94,6 +94,8 @@ code kogito-travel-agency
 
 ## 6) Import the required resources to the project
 
+In this step you will import the required data objects (`Address.java`, `Flight.java`, `Hotel.java`, `Traveller.java`, `Trip.java`) . A decision table will also be added to your project under `resources/org/acme/travel/visa-rules.xls`. Finally, two tests are going to be imported `TravelTest.java` and `VisaRulesTest.java`. 
+
 1. Clone the DevConf 2020 Workshop:
 
 ```bash
