@@ -134,7 +134,11 @@ mvn clean compile
 mvn clean verify
 ```
 
+All tests should pass.
+
 ## 8) Create service classes
+
+Add the following two clases which will be a flight and hotel services, inside the `src/main/java/org/acme/travel/service` folder: 
 
 1. Create `FlightBookingService`, a CDI bean with an `ApplicationScoped` annotation, that contains one method, receiving a `Trip` object and returning a `Flight` one.
 
