@@ -285,7 +285,7 @@ mvn clean verify
 
 **Important!** Save your work: ctrl+S
 
-To test your process, uncomment the tests ([CTRL+K, CTRL+U](https://stackoverflow.com/questions/5717816/how-to-uncomment-multiple-lines-of-code-in-visual-studio/5717871)) on `src/test/java/org/acme/travel/TravelTest.java` and execute:
+To test your process, uncomment the tests ([CTRL+K, CTRL+U](https://stackoverflow.com/questions/5717816/how-to-uncomment-multiple-lines-of-code-in-visual-studio/5717871) or CMD+K,CMD+U when using a mac) on `src/test/java/org/acme/travel/TravelTest.java` and execute:
 
 ```bash
 mvn clean verify
