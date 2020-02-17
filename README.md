@@ -154,7 +154,7 @@ mvn clean verify
 
 ![alt text](docs/hotelbooking.png)
 
-1. On `src/main/resources/org/acme/travel`, create new BPMN file for the Hotel booking sub-process. Using the BPMN editor, set the following process attributes (properties panel on right side):
+1. On `src/main/resources/org/acme/travel`, create new BPMN file named `hotelBooking.bpmn2` for the Hotel booking sub-process. Since you have installed an extension, VSCode will automatically open a BPMN editor for you. Using the BPMN editor, set the following process attributes (properties panel on right side):
 
 - Process Name: _Hotel Booking_
 - Id: _hotelBooking_
@@ -164,26 +164,28 @@ mvn clean verify
     - Name: _hotel_ Data type (custom): `org.acme.travel.Hotel`
     - Name: _trip_ Data type (custom): `org.acme.travel.Trip`
 
-**Important!** Save your work: ctrl+S
+**Important!** Save your work: ctrl+s (Or cmd+s if you are using mac)
 
 2. Model Hotel Booking process
 
  - Add a start node, a service task for executing the `HotelBookingService` bean and an end node.
- - Select the new service task node modify the following properties (Implementation/Execution):
-   - Select Implementation _Java_
-   - Interface, the fully complete name of the `HotelBookingService` class: `org.acme.travel.service.HotelBookingService`
-   - Operation, the name of the method that you created in the `HotelBookingService` class service.
-   - Assignments:
-        - Input: Add an input named _Parameter_ of type (custom) `org.acme.travel.Trip` and source _trip_.
-        - Output: Add an output named _Result_ of type (custom) `org.acme.travel.Hotel` and source _hotel_.
+ - Select the new service task node:
+   -  Configure it's name, you can set it with the name `Book Hotel`;
+   -  Modify the following properties (Implementation/Execution):
+     - Select Implementation _Java_
+     - Interface, the complete name (FQDN) of the `HotelBookingService` class: `org.acme.travel.service.HotelBookingService`
+     - Operation, the name of the method that you created in the `HotelBookingService` class service.
+     - Assignments:
+          - Input: Add an input named _Parameter_ of type (custom) `org.acme.travel.Trip` and source _trip_.
+          - Output: Add an output named _Result_ of type (custom) `org.acme.travel.Hotel` and source _hotel_.
 
-**Important!** Save your work: ctrl+S
+**Important!** Save your work: ctrl+S (or cmd+s)
 
 ## 10) Create the business logic for the Flight Booking
 
 ![alt text](docs/flightbooking.png)
 
-1. On `src/main/resources/org/acme/travel`, create new BPMN file for the Flight booking sub-process. Using the BPMN editor, set the following process attributes (properties panel on right side):
+1. On `src/main/resources/org/acme/travel`, create new BPMN file named `flightBooking.bpmn2` for the Flight booking sub-process. Using the BPMN editor, set the following process attributes (properties panel on right side):
 
 - Process Name: _Flight Booking_
 - Id: _flightBooking_
@@ -198,15 +200,17 @@ mvn clean verify
 2. Model Flight Booking process
 
  - Add a start node, a service task for executing the `FlightBookingService` bean and an end node.
- - Select the new service task node modify the following properties (Implementation/Execution):
-   - Select Implementation _Java_
-   - Interface, the fully complete name of the `FlightBookingService` class: `org.acme.travel.service.FlightBookingService`
-   - Operation, the name of the method that you created in the `FlightBookingService` class service.
-   - Assignments:
-        - Input: Add an input named _Parameter_ of type `org.acme.travel.Trip` and source _trip_.
-        - Output: Add an output named _Result_ of type `org.acme.travel.Flight` and source _flight_.
+ - Select the new service task node and:
+   - Name it as _Book flight_ 
+   - Modify the following properties (Implementation/Execution):
+     - Select Implementation _Java_
+     - Interface, the fully complete name of the `FlightBookingService` class: `org.acme.travel.service.FlightBookingService`
+     - Operation, the name of the method that you created in the `FlightBookingService` class service.
+     - Assignments:
+          - Input: Add an input named _Parameter_ of type `org.acme.travel.Trip` and source _trip_.
+          - Output: Add an output named _Result_ of type `org.acme.travel.Flight` and source _flight_.
 
-**Important!** Save your work: ctrl+S
+**Important!** Save your work: ctrl+S (or cmd+s)
 
 ## 11) Create the business logic for the Travel Request
 
